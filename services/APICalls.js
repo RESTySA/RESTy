@@ -11,8 +11,11 @@ export default function routeCall(url, method, userInput) {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(userInput)
-  });
+    body: userInput
+  })
+    .then(res => {
+      return res.json();
+    });
 
   //fix delete / get later 
 
