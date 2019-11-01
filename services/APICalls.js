@@ -5,11 +5,15 @@ export default function routeCall(url, method, userInput) {
         return res.json();
       });
   }
+
   return fetch(url, {
-    method: String.toUpperCase(method),
+    method: method.toUpperCase(),
     headers: {
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify(userInput)
   });
+
+  //fix delete / get later 
+
 }
