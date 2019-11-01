@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import Buttons from '../components/Buttons';
-import Results from '../components/Results';
-import UserInput from '../components/UserInput';
 import PropTypes from 'prop-types';
 
 
@@ -16,11 +13,16 @@ export default class Form extends Component {
     }
 
     render() {
-      const { url, handleRouteChange, handleSubmit, handleUserInput, handleURLInput } = this.props;
+      const { handleRouteChange, handleSubmit, handleUserInput, handleURLInput } = this.props;
       return (
         <form onSubmit={handleSubmit}>
-          <input type="string" value={url} placeholder="URL">
-          </input>
+          <input type="string" placeholder="URL" onChange={handleURLInput} />
+          <input onChange={handleRouteChange} type="radio" name="method" value="get" /> <span>GET</span>
+          <input onChange={handleRouteChange} type="radio" name="method" value="post" /> <span>POST</span>
+          <input onChange={handleRouteChange} type="radio" name="method" value="put" /> <span>PUT</span>
+          <input onChange={handleRouteChange} type="radio" name="method" value="delete" /> <span>DELETE</span>
+          <textarea onChange={handleUserInput} placeholder="Raw JSON Body" rows={10} cols={70} />
+          <button onClick={handleSubmit}>Go!</button>
         </form>
       );
     }
