@@ -33,7 +33,11 @@ export default class FormContainer extends Component {
           this.setState({ historia: { url: this.state.url, method: this.state.method, id: this.state.id } });
         }
         else {
-          this.setState({ historia: this.state.historia.push({ url: this.state.url, method: this.state.method, id: this.state.id }) });
+
+          let tempHistory = this.state.historia;
+          tempHistory.push({ url: this.state.url, method: this.state.method, id: this.state.id });
+
+          this.setState({ historia: tempHistory });
         }
         this.setState(state => {
           return {
