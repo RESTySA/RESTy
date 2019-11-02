@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Results from '../components/Results';
 import Form from '../components/Form';
 import routeCall from '../../services/APICalls';
+import DeckOfHistory from '../components/DeckOfHistory';
 
 export default class FormContainer extends Component {
 
@@ -9,7 +10,9 @@ export default class FormContainer extends Component {
     url: '',
     method: '',
     userInput: '',
-    results: null
+    results: null,
+    historia: [],
+    id: 0
   }
 
   handleChange = ({ target }) => {
@@ -26,8 +29,18 @@ export default class FormContainer extends Component {
     routeCall(url, method, userInput)
       .then(res => {
         this.setState({ results: JSON.stringify(res, null, 2) });
+        if(this.state.historia === []) {
+          this.setState({ historia: { url: this.state.url, method: this.state.method, id: this.state.id } });
+        }
+        else {
+          this.setState({ historia: this.state.historia.push({ url: this.state.url, method: this.state.method, id: this.state.id }) });
+        }
+        this.setState(state => {
+          return {
+            id: state.id + 1
+          };
+        });
       });
-
   }
 
 
@@ -41,6 +54,7 @@ export default class FormContainer extends Component {
           handleSubmit={this.handleSubmit}
         />
         <Results text={this.state.results} />
+        <DeckOfHistory history={this.state.historia} />
       </>
     );
   }
