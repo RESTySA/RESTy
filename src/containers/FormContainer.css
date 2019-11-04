@@ -1,0 +1,18 @@
+.FormContainer {
+    display:flex;
+    flex-direction: row;
+
+.Input {
+    display:flex;
+    flex-direction: column;
+
+    form{
+        display:flex;
+        flex-direction: column;
+
+        }
+
+
+    }
+
+}

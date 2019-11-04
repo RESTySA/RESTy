@@ -1,0 +1,7 @@
+.Results{
+    max-width:500px;
+
+    pre{
+        overflow: scroll
+    }
+}

@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Results.css'
 
 const Results = ({ text }) => {
 
   return (
-    <div>
+    <div className={styles.Results}>
       <pre>
         {text}
       </pre>
