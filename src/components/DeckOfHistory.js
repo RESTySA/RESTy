@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import History from './History';
+import styles from './DeckOfHistory.css'
 
 const DeckOfHistory = ({ history }) => {
   let historyCard;
@@ -15,12 +16,12 @@ const DeckOfHistory = ({ history }) => {
   }
 
   return (
-    <>
-      <h1>History</h1>
+    <div className={styles.DeckOfHistory}>
+      <h3>History</h3>
       <ul>
         {historyCard}
       </ul>
-    </>
+    </div>
   );
 };
 

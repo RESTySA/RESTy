@@ -1,7 +1,10 @@
 .Results{
-    max-width:500px;
+    margin:20px 0;
+    max-width:1000px;
+    border: 1px solid lightgrey;
+    padding: 20px;
 
     pre{
-        overflow: scroll
+    white-space: pre-wrap;
     }
 }
