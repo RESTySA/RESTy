@@ -3,6 +3,7 @@ import Results from '../components/Results';
 import Form from '../components/Form';
 import routeCall from '../../services/APICalls';
 import DeckOfHistory from '../components/DeckOfHistory';
+import styles from './FormContainer.css';
 
 export default class FormContainer extends Component {
 
@@ -51,15 +52,17 @@ export default class FormContainer extends Component {
 
   render() {
     return (
-      <>
-        <Form
-          url={this.state.url}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-        />
-        <Results text={this.state.results} />
+      <div className={styles.FormContainer}>
         <DeckOfHistory history={this.state.historia} />
-      </>
+        <div className={styles.Input}>
+          <Form
+            url={this.state.url}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
+          <Results text={this.state.results} />
+        </div>
+      </div >
     );
   }
 }
