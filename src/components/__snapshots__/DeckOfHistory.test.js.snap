@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeckOfHistory component renders DeckOfHistory 1`] = `
+<div
+  className="DeckOfHistory"
+>
+  <h3>
+    History
+  </h3>
+  <ul>
+    <li
+      key="5da237699734fdcb7bef8f51"
+    >
+      <History
+        method="get"
+        url="test.com"
+      />
+    </li>
+    <li
+      key="5da237699734fdcb7bef8f52"
+    >
+      <History
+        method="post"
+        url="test.com"
+      />
+    </li>
+  </ul>
+</div>
+`;
