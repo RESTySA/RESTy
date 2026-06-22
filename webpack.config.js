@@ -7,7 +7,7 @@ module.exports = {
     filename: './bundle.[hash].js'
   },
   devServer: {
-    port: 7890
+    port: 7891
   },
   plugins: [
     new HtmlPlugin({ template: './src/index.html' }),
@@ -29,8 +29,8 @@ module.exports = {
         test: /.css$/,
         use: [
           {
-            loader: 'style-loader',
-            options: { sourceMap: true }
+            loader: 'style-loader'
+            // options: { sourceMap: true }
           },
           {
             loader: 'css-loader',
@@ -62,4 +62,3 @@ module.exports = {
     ]
   }
 };
-  
